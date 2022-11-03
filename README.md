@@ -19,9 +19,14 @@ I use the [Footy Stats website](https://footystats.org/) to get the stats.
 5. Create and Enviroment Variable called 'PY_PW' with your email password.
 6. Run [run.py](run.py)
 
+_Note: run.py has 2 arguments that can be passed in CLI: when send=1, it sends email to the receivers, when display=1, a string tables is shown on CLI._
+
 _Note: There's a function on [utils.py](utils.py) that generates a stats.json with all the stats disabled_
 
 ## To Improve
 
 - I'd like that there were only 1 PDF file with all the stats from each team in different pages.
 - I'd like to have more tests to have a better program.
+- arguments.json should be called in another way.
+- What happen if I don't pass sender or receivers in the send_email function? Need a unit test for that, and need to add error handling
+- Make the program to run in Linux

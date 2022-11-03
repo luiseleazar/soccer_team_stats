@@ -1,3 +1,4 @@
+import argparse
 import json
 import logging
 from typing import List
@@ -12,6 +13,24 @@ ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 ch.setFormatter(formatter)
 logger.addHandler(ch)
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '-send', 
+    '--send', 
+    type=int, 
+    default=1,
+    choices = [0, 1], 
+    help='1 send email, 0 not send email')
+parser.add_argument(
+    '-display', 
+    '--display', 
+    type=int, 
+    default=0,
+    choices = [0, 1], 
+    help='1 display in terminal, 0 not display')
+args_list = parser.parse_args()
+
 
 def get_arguments(filename: str):
     with open(filename, 'r') as f:
